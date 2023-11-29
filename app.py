@@ -67,7 +67,7 @@ time.sleep(3)
 
 #Checando se aparece In Order no Historico
 titleInOrderHistory = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[3]/ul/li[4]/h3').text
-assert titlePreOrderHistory == 'In order'
+assert titleInOrderHistory == 'In order'
 time.sleep(3)
 
 #Clicando no botão PostOrder
@@ -76,8 +76,8 @@ PostTreeButton.click()
 time.sleep(3)
 
 #Checando se aparece Post Order no Historico
-titleInOrderHistory = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[3]/ul/li[4]/h3').text
-assert titlePreOrderHistory == 'Post order'
+titlePostOrderHistory = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[3]/ul/li[5]/h3').text
+assert titlePostOrderHistory == 'Post order'
 time.sleep(3)
 
 #Clicando no botão Breadth-first search
@@ -86,8 +86,8 @@ BreadthFirstTreeButton.click()
 time.sleep(3)
 
 #Checando se aparece Breadth-first search no Historico
-titleInOrderHistory = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[3]/ul/li[6]/h3').text
-assert titlePreOrderHistory == 'Breadth-first search'
+titleBreadthFirstHistory = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[3]/ul/li[6]/h3').text
+assert titleBreadthFirstHistory == 'Breadth-first search'
 time.sleep(3)
 
 #Clicando no botão Staff
