@@ -1,12 +1,8 @@
 from collections import deque
 import functools
 from selenium import webdriver
-
-# Usada para gerenciar automaticamente os drivers do navegador
-from webdriver_manager.chrome import ChromeDriverManager
-
-#A classe Keys fornece teclas no teclado como RETURN, F1, ALT etc.
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait as wait
+from selenium.webdriver.support import expected_conditions
 
 #A classe By é usada para localizar elementos dentro de um documento.
 from selenium.webdriver.common.by import By
@@ -117,6 +113,17 @@ time.sleep(3)
 windowBefore = driver.window_handles[0]
 driver.switch_to.window(windowBefore)
 time.sleep(3)
+
+#Clicando no botão create tree quando não foi preenchido o campo de inserir nó
+createTreeButton = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[1]/button[1]')
+createTreeButton.click()
+time.sleep(3)
+
+#Verificando se aparece um alerta de notificação para o usuário preencher o nó
+alert = driver.switch_to.alert
+text = alert.text
+assert text == "Enter the number of nodes"
+alert.dismiss()
 
 #Colocando numero 5 no campo "number of nodes"
 inputField = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[2]/div[1]/input')
