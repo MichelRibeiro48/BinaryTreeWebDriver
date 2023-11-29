@@ -150,9 +150,9 @@ novalista = OrdenarListaArvore(treeInString)
 root = Node(novalista[0])
 for i in range(len(novalista)):
    root.insert(novalista[i])
-assert compararListas(root.PreorderTraversal(root), preOrderInString) == True
 print("ordenação feita pelo python",root.PreorderTraversal(root))
 print("ordenação feita pelo site",preOrderInString)
+assert compararListas(root.PreorderTraversal(root), preOrderInString) == True
 time.sleep(3)
 
 #Clicando no botão InOrder
@@ -170,9 +170,9 @@ InOrderInString = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/
 root = Node(novalista[0])
 for i in range(len(novalista)):
    root.insert(novalista[i])
-assert compararListas(root.inOrderTraversal(root), InOrderInString) == True
 print("ordenação feita pelo python", root.inOrderTraversal(root))
 print("ordenação feita pelo site", InOrderInString)
+assert compararListas(root.inOrderTraversal(root), InOrderInString) == True
 time.sleep(3)
 
 #Clicando no botão PostOrder
@@ -190,9 +190,9 @@ postOrderInString = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/di
 root = Node(novalista[0])
 for i in range(len(novalista)):
    root.insert(novalista[i])
-assert compararListas(root.PostorderTraversal(root), postOrderInString) == True
 print("ordenação feita pelo python",root.PostorderTraversal(root))
 print("ordenação feita pelo site",postOrderInString)
+assert compararListas(root.PostorderTraversal(root), postOrderInString) == True
 time.sleep(3)
 
 #Clicando no botão Breadth-first search
@@ -210,9 +210,9 @@ BFSInString = driver.find_element(by=By.XPATH, value='//*[@id="__next"]/div/div[
 root = Node(novalista[0])
 for i in range(len(novalista)):
    root.insert(novalista[i])
-assert compararListas(root.BFSTraversal(root), BFSInString) == True
 print("ordenação feita pelo python",root.BFSTraversal(root))
 print("ordenação feita pelo site",BFSInString)
+assert compararListas(root.BFSTraversal(root), BFSInString) == True
 time.sleep(3)
 
 #Clicando no botão Staff
